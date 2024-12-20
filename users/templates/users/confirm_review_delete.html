@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/confirm_delete.css' %}">
+<h1>حذف رستوران</h1>
+<p class="confirmation-text">آیا مطمئن هستید که می خواهید نظر را حذف کنید؟</p>
+
+<form method="post" class="delete-form">
+    {% csrf_token %}
+    <button type="submit" class="confirm-button">بله</button>
+</form>
+
+<a href="{% url 'menu_list' restaurant_id=restaurant.id %}" class="cancel-link">بازگشت</a>
+
+{% endblock %}

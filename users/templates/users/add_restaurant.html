@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/add_restaurant.css' %}">
+<h2 class="form-title">افزودن رستوران</h2>
+
+<form method="post" class="restaurant-form" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <!-- Display Form Errors (Global Errors) -->
+    {% if form.errors %}
+        <div class="form-errors">
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- Form Fields -->
+    {{ form.as_p }}
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">افزودن رستوران</button>
+</form>
+<div class="left-restaurant-box">
+ <img src= "{% static 'left-chef.jpg' %}" class="left-restaurant">
+</div>
+
+{% endblock %}
+

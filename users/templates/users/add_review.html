@@ -1,0 +1,57 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/add_review.css' %}">
+
+<div class="add-review-container">
+    <h2>نظرسنجی</h2>
+    <form method="post" class="add-review-form">
+        {% csrf_token %}
+
+        <!-- Display Form Errors -->
+        {% if form.errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <!-- Description Field -->
+        <div class="description-container">
+            <label for="id_description">توضیحات</label>
+            <textarea name="description" id="id_description" rows="7" required placeholder="نظر خود را وارد کنید..."></textarea>
+        </div>
+
+        <!-- Star Rating -->
+        <div class="rating-container">
+            <label for="id_rate">امتیاز:</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rate" value="5" required>
+                <label for="star5" title="5 stars">★</label>
+                <input type="radio" id="star4" name="rate" value="4">
+                <label for="star4" title="4 stars">★</label>
+                <input type="radio" id="star3" name="rate" value="3">
+                <label for="star3" title="3 stars">★</label>
+                <input type="radio" id="star2" name="rate" value="2">
+                <label for="star2" title="2 stars">★</label>
+                <input type="radio" id="star1" name="rate" value="1">
+                <label for="star1" title="1 star">★</label>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-buttons">
+            <button type="submit" class="btn-submit">تایید</button>
+            <a href="{% url 'menu_list' restaurant_id=restaurant.id %}" class="btn-cancel">بازگشت</a>
+        </div>
+    </form>
+</div>
+<div class="img-box">
+ <img src= "{% static 'Think.jpg' %}" class="img">
+</div>
+{% endblock %}

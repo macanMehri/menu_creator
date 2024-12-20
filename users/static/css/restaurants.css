@@ -1,0 +1,146 @@
+/* General Page Styling */
+.search-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+    direction: rtl;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    direction: rtl;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-right: none;
+    cursor: pointer;
+    border-radius: 5px 0px 0px 5px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.page-title {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    font-size: 2rem;
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.auth-buttons .add-btn,
+.auth-buttons .my-restaurants-btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-buttons .add-btn:hover,
+.auth-buttons .my-restaurants-btn:hover {
+    background-color: #ff4500;
+}
+
+/* Restaurant Container */
+/* Container for the restaurant cards */
+.restaurant-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 20px; /* Space between cards */
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 1200px; /* Limits container width */
+}
+
+/* Individual restaurant card */
+.restaurant-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Restaurant image */
+.restaurant-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Crops and scales the image */
+}
+
+/* Restaurant info (name and details) */
+.restaurant-info {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.restaurant-name {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Empty message */
+.empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    grid
+
+.restaurant-link {
+    text-decoration: none !important; /* Completely removes underline */
+    color: inherit; /* Ensures the text uses the parent's color */
+}
+
+.restaurant-link:hover,
+.restaurant-link:focus,
+.restaurant-link:active {
+    text-decoration: none !important; /* Ensures no underline on hover, focus, or active states */
+}
+

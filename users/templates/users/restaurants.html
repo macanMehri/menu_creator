@@ -1,0 +1,41 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/restaurants.css' %}">
+
+<!-- Page Title -->
+<h2 class="page-title">رستوران ها</h2>
+<section class="search-section">
+    <form method="get" action="{% url 'restaurants' %}" class="search-form">
+        <input type="text" name="query" placeholder="جست و جو برای رستوران..." value="{{ request.GET.query }}" class="search-input">
+        <button type="submit" class="search-button">جست و جو</button>
+    </form>
+</section>
+
+<div class="restaurant-container">
+    {% for restaurant in restaurants %}
+        <div class="restaurant-card">
+            <a href="{% url 'menu_list' restaurant_id=restaurant.id %}" class="restaurant-link">
+                <img src="{{ restaurant.picture.url }}" alt="{{ restaurant.name }}" class="restaurant-image">
+                <div class="restaurant-info">
+                    <a href="{% url 'menu_list' restaurant_id=restaurant.id %}" style="text-decoration: none; color: inherit;">
+                        {{ restaurant.name }}
+                    </a>
+
+                </div>
+            </a>
+        </div>
+    {% empty %}
+        <p class="empty-message">هیچ رستورانی وجود ندارد!</p>
+    {% endfor %}
+</div>
+
+<div class="auth-buttons">
+    {% if user.is_authenticated %}
+        <a href="{% url 'add_restaurant' %}" class="add-restaurant-btn">
+            <button type="button" class="add-btn">افزودن رستوران</button>
+        </a>
+    {% endif %}
+</div>
+
+{% endblock %}

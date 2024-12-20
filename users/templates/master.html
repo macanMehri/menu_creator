@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fa">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <title>{% block title %}منو باما{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1><a href="{% url 'restaurants' %}" >منو باما</a></h1>
+        </div>
+        <nav>
+            <a href="{% url 'restaurants' %}">خانه</a>
+            <a href="{% url 'restaurants' %}">رستوران ها</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}" >حساب کاربری</a>
+            {% endif %}
+
+            <a href="{% url 'restaurants' %}">درباره ی ما</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">خروج</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="login-button">ورود</a>
+                <a href="{% url 'signup' %}" class="signup-button">ثبت نام</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy;  تمام حقوق این سایت متعلق به گروه مهندسی امن می باشد </p>
+        <p><a href="mailto:">amn@gmail.com : ارتباط با ما</a></p>
+    </footer>
+</body>
+</html>

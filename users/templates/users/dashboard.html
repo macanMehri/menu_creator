@@ -1,0 +1,51 @@
+{% extends "master.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+<div class="container">
+    <h2>حساب کاربری</h2>
+    
+    <!-- User Information -->
+    <div class="user-info">
+        <h3>اطلاعات کاربر</h3>
+        <p><strong>نام کاربری:</strong> {{ user.username }}</p>
+        <p><strong>ایمیل:</strong> {{ user.email }}</p>
+    </div>
+    
+<h2>رستوران های من</h2>
+<div class="restaurant-container">
+    {% for restaurant in restaurants %}
+        <div class="restaurant-card">
+            <a href="{% url 'menu_list' restaurant_id=restaurant.id %}" class="restaurant-link">
+                <img src="{{ restaurant.picture.url }}" alt="{{ restaurant.name }}" class="restaurant-image">
+                <div class="restaurant-info">
+                    <a href="{% url 'menu_list' restaurant_id=restaurant.id %}" style="text-decoration: none; color: inherit;">
+                        {{ restaurant.name }}
+                    </a>
+                    <span>
+                      {% if restaurant.is_active %}
+                        <i class="fas fa-check-circle" style="color: green;"></i>
+                      {% else %}
+                        <i class="fas fa-times-circle" style="color: red;"></i>
+                      {% endif %}
+                    </span>
+                </div>
+            </a>
+        </div>
+    {% empty %}
+        <p class="empty-message">هیچ رستورانی وجود ندارد!</p>
+    {% endfor %}
+</div>
+<a href="{% url 'add_restaurant' %}" class="btn">
+      افزودن رستوران
+</a>
+</div>
+<div class="img-box">
+ <img src= "{% static 'Laychef.jpg' %}" class="img">
+</div>
+{% endblock %}

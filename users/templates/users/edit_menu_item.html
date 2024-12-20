@@ -1,0 +1,68 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/edit.css' %}">
+
+<body>
+    <h2>تغییر اطلاعات سفارش</h2>
+
+    <form method="post" class="order-form-container" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <div class="form-errors">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="id_name">نام سفارش:</label>
+            {{ form.name }}
+            {% if form.name.errors %}
+            <div class="field-error">
+                {{ form.name.errors }}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_cost">قیمت:</label>
+            {{ form.cost }}
+            {% if form.cost.errors %}
+            <div class="field-error">
+                {{ form.cost.errors }}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_category">دسته بندی:</label>
+            {{ form.category }}
+            {% if form.category.errors %}
+            <div class="field-error">
+                {{ form.category.errors }}
+            </div>
+            {% endif %}
+        </div>
+
+        {% if form.picture.value %}
+        <div class="existing-image-container">
+            <label>تصویر فعلی:</label>
+            <img src="{{ form.picture.value.url }}" class="image-preview" alt="تصویر سفارش">
+        </div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="id_picture" class="custom-file-label">انتخاب تصویر جدید</label>
+            {{ form.picture }}
+            {% if form.picture.errors %}
+            <div class="field-error">
+                {{ form.picture.errors }}
+            </div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="submit-button">ذخیره تغییرات</button>
+    </form>
+</body>
+{% endblock %}

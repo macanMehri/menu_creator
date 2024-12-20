@@ -1,0 +1,123 @@
+    /* Title Styling */
+    .form-title {
+        text-align: center;
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+body {
+  font-family: Arial, sans-serif;
+background: white;}
+
+    /* Form Styling */
+   .restaurant-form {
+        align: center;
+        width: 100%;
+        max-width: 5000px;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 10px;
+        font-family: 'Arial', sans-serif;
+        direction: rtl;
+
+        background-color: #ffffff;
+    }
+
+    /* Button Styling */
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #004c56;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        background-color: #013b42;
+    }
+
+    /* Error Styling */
+    .form-errors {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .form-errors ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .form-errors ul li {
+        margin-bottom: 5px;
+    }
+.left-restaurant {
+    position: absolute;
+    right: 10px;
+    max-width: 250px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 90px; /* Corrected from 'margin_left' */
+    top: 160px; /* Corrected '=' to ':' */
+}
+
+.left-restaurant-box {
+    position: absolute; /* Added 'position' property for better layout control */
+    top: 35px; /* Corrected '=' to ':' */
+    float: left; /* Retained 'float' if required, though not commonly used with 'position' */
+    max-width: 100px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 10px; /* Corrected from 'margin_left' */
+}
+
+
+.restaurant-form input[type="text"],
+.restaurant-form input[type="number"],
+.restaurant-form input[type="file"],
+.restaurant-form textarea,
+.restaurant-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus State for Inputs */
+.restaurant-form input:focus,
+.restaurant-form textarea:focus,
+.restaurant-form select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.laychef {
+    position: absolute;
+    right: 10px;
+    max-width: 300px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 90px; /* Corrected from 'margin_left' */
+    top: 200px; /* Corrected '=' to ':' */
+}
+
+.laychef-box {
+    position: absolute; /* Added 'position' property for better layout control */
+    top: 65px; /* Corrected '=' to ':' */
+    float: left; /* Retained 'float' if required, though not commonly used with 'position' */
+    max-width: 200px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 850px; /* Corrected from 'margin_left' */
+}

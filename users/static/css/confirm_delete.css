@@ -1,0 +1,65 @@
+        /* Title Styling */
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        color: #e74c3c;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Confirmation Text */
+    .confirmation-text {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Form Styling */
+    .delete-form {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Confirmation Button */
+    .confirm-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .confirm-button:hover {
+        background-color: #c0392b;
+    }
+
+    /* Cancel Link Styling */
+    .cancel-link {
+        display: block;
+        text-align: center;
+        color: #007bff;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .cancel-link:hover {
+        color: #0056b3;
+    }
+
+    /* Page Centering */
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+    }

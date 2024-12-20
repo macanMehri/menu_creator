@@ -1,0 +1,82 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/menu_list.css' %}">
+<section class="search-section">
+    <form method="get" action="{% url 'menu_list' restaurant_id=restaurant.id %}" class="search-form">
+        <input type="text" name="query" placeholder="جست و جو برای غذا..." value="{{ request.GET.query }}" class="search-input">
+        <button type="submit" class="search-button">جست و جو</button>
+    </form>
+</section>
+<div class="restaurant-info">
+    <span class="restaurant-info-item">امتیاز: {{ restaurant.امتیاز_رستوران }}</span>
+    <span class="restaurant-info-item">شماره تماس: {{ restaurant.phone_number }}</span>
+    <span class="restaurant-info-item">آدرس: {{ restaurant.address }}</span>
+    <span class="restaurant-info-item">رستوران: {{ restaurant.name }}</span>
+</div>
+<div class="menu-container">
+<ul class="menu-list">
+    {% for item in menu_items %}
+        <li class="menu-item">
+            <span class="item-name">{{ item.order.name }}</span>
+            <span class="item-cost" data-cost="{{ item.order.cost }}">{{ item.order.cost }} ریال</span>
+            {% if item.order.picture %}
+                <img src="{{ item.order.picture.url }}" alt="{{ item.order.name }}" style="width: 100px; height: auto;">
+            {% else %}
+                <img src="{% static 'menu_images/default_image.jpg' %}" alt="Default Image" style="width: 100px; height: auto;">
+            {% endif %}
+            {% if restaurant.owner == request.user %}
+                <div class="actions">
+                    <a href="{% url 'edit_menu_item' menu_item_id=item.id %}" class="edit-link">تغییر</a>
+                    <a href="{% url 'delete_menu_item' menu_item_id=item.id %}" class="delete-link">حذف</a>
+                </div>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li class="empty-menu">!منو در حال حاضر خالی است</li>
+    {% endfor %}
+</ul>
+<div class="reviews-section">
+        <h3>نظرات کاربران</h3>
+        {% if reviews %}
+            <ul class="reviews-list">
+                {% for review in reviews %}
+                    <li>
+                        {% if user == restaurant.owner %}
+                            <strong>{{ review.user }}:</strong><br>
+                        {% endif %}
+                        {{ review.rate }}★ - {{ review.description }}
+                        {% if user == restaurant.owner %}
+                            <a href="{% url 'confirm_review_delete' review_id=review.id %}" class="delete-review-link">حذف</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            نظری وجود ندارد!
+        {% endif %}
+</div>
+
+{% if restaurant.owner == request.user %}
+    <a href="{% url 'add_order_to_menu' restaurant_id=restaurant.id %}" class="add-link">اضافه کردن</a>
+    <a href="{% url 'confirm_restaurant_delete' restaurant_id=restaurant.id %}" class="add-link">حذف رستوران</a>
+    <a href="{% url 'edit_restaurant' restaurant_id=restaurant.id %}" class="add-link">تغییر اطلاعات رستوران</a>
+{% endif %}
+
+{% if user.is_authenticated and user != restaurant.owner %}
+        <a href="{% url 'add_review' restaurant_id=restaurant.id %}" class="add-link">نظرسنجی</a>
+{% endif %}
+<a href="{% url 'restaurants' %}" class="back-button">بازگشت به لیست رستوران‌ها</a>
+
+<!-- JavaScript to format prices with commas -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const priceElements = document.querySelectorAll('.item-cost');
+        priceElements.forEach(function (element) {
+            const rawCost = element.getAttribute('data-cost');
+            const formattedCost = new Intl.NumberFormat('en-US').format(rawCost);
+            element.textContent = `${formattedCost} ریال`;
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/add_restaurant.css' %}">
+
+<h2 class="form-title">اضافه کردن سفارش به منو</h2>
+<form method="post" class="restaurant-form" enctype="multipart/form-data">
+        {% if form.errors %}
+        <div class="form-errors">
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="submit-btn">اضافه کردن</button>
+</form>
+<div class="laychef-box">
+ <img src= "{% static 'running.jpg' %}" class="laychef">
+</div>
+
+{% endblock %}

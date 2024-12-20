@@ -1,0 +1,133 @@
+.add-review-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    direction: rtl;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.add-review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.description-container label,
+.rating-container label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+    direction: rtl;
+}
+
+.description-container textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 0.9rem;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 1.5rem;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffc107;
+}
+
+.star-rating input:checked ~ label {
+    color: #ffc107;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-submit,
+.btn-cancel {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.btn-submit {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+
+.error-messages ul {
+    color: red;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.img {
+    position: absolute;
+    right: 10px;
+    max-width: 300px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 90px; /* Corrected from 'margin_left' */
+    top: 160px; /* Corrected '=' to ':' */
+}
+
+.img-box {
+    position: absolute; /* Added 'position' property for better layout control */
+    top: 30px; /* Corrected '=' to ':' */
+    float: left; /* Retained 'float' if required, though not commonly used with 'position' */
+    max-width: 200px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 700px; /* Corrected from 'margin_left' */
+}

@@ -1,0 +1,139 @@
+h2 {
+        text-align: center;
+        font-size: 24px;
+        color: #222830;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+background: white;}
+
+/* کانتینر فرم */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: calc(100vh - 150px); /* فاصله کل صفحه بدون هدر و فوتر */
+  padding: 20px;
+
+}
+
+.form-section {
+  width: 350px;
+  background-color: transparent; /* بدون پس‌زمینه */
+}
+
+.form-section h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #fff; /* رنگ سفید برای عنوان فرم */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  direction: rtl;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #222830;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: none  ;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-button {
+  padding: 10px 20px; /* Increased padding for larger size */
+  border: none;
+  border-radius: 15px;
+  background-color: #004c56;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.25rem; /* Increased font size for better visibility */
+  width: 90%; /* Full width for better alignment */
+  text-align: center; /* Ensures text remains centered */
+}
+
+.submit-button:hover {
+  background-color: #013b42;
+}
+
+a {
+
+  text-align: center;
+  margin-top: 10px;
+  color: #7a3f04;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* بخش سمت راست */
+.right-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.ramen-image {
+  width: 250px;
+}
+.pizza {
+    position: absolute;
+    right: 10px;
+    max-width: 250px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 100px; /* Corrected from 'margin_left' */
+    top: 55px; /* Corrected '=' to ':' */
+}
+
+.pizza-box {
+    position: absolute; /* Added 'position' property for better layout control */
+    top: 35px; /* Corrected '=' to ':' */
+    float: left; /* Retained 'float' if required, though not commonly used with 'position' */
+    max-width: 100px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: -100px; /* Corrected from 'margin_left' */
+}
+.right-pizza {
+    position: absolute;
+    right: 10px;
+    max-width: 250px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 100px; /* Corrected from 'margin_left' */
+    top: 55px; /* Corrected '=' to ':' */
+}
+
+.right-pizza-box {
+    position: absolute; /* Added 'position' property for better layout control */
+    top: 35px; /* Corrected '=' to ':' */
+    float: left; /* Retained 'float' if required, though not commonly used with 'position' */
+    max-width: 100px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 570px; /* Corrected from 'margin_left' */
+}
