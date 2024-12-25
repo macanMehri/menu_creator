@@ -11,7 +11,7 @@ body {
 background: white;}
 
     /* Form Styling */
-   .restaurant-form {
+  .restaurant-form {
         align: center;
         width: 100%;
         max-width: 5000px;
@@ -20,9 +20,11 @@ background: white;}
         border-radius: 10px;
         font-family: 'Arial', sans-serif;
         direction: rtl;
-
         background-color: #ffffff;
     }
+  .restaurant-form textarea {
+        resize: none;
+  }
 
     /* Button Styling */
     .submit-btn {

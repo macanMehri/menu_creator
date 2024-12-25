@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="{% static 'css/login_signup.css' %}">
 <h2>ورود</h2>
-<form method="post" class="form-container">
+<form method="post" class="form-container" style="top: 40%;">
     {% csrf_token %}
 
     {% if form.non_field_errors %}
@@ -37,10 +37,4 @@
     <button type="submit" class="submit-button">ورود</button>
     <a href="{% url 'signup' %}">آیا حساب کاربری ندارید؟</a>
 </form>
-<div class="pizza-box">
- <img src= "{% static 'piza.png' %}" class="pizza">
-</div>
-<div class="right-pizza-box">
- <img src= "{% static 'right-pizza.png' %}" class="right-pizza">
-</div>
 {% endblock %}

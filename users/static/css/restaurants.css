@@ -81,6 +81,7 @@
 /* Restaurant Container */
 /* Container for the restaurant cards */
 .restaurant-container {
+    direction: rtl;
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
     gap: 20px; /* Space between cards */

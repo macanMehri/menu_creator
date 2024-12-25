@@ -4,6 +4,7 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 
@@ -13,8 +14,8 @@
     <!-- User Information -->
     <div class="user-info">
         <h3>اطلاعات کاربر</h3>
-        <p><strong>نام کاربری:</strong> {{ user.username }}</p>
-        <p><strong>ایمیل:</strong> {{ user.email }}</p>
+        <p><strong><i class="bi bi-person-fill"></i> نام کاربری: </strong> {{ user.username }}</p>
+        <p><strong><i class="bi bi-envelope-fill"></i> ایمیل:</strong> {{ user.email }}</p>
     </div>
     
 <h2>رستوران های من</h2>
@@ -41,9 +42,7 @@
         <p class="empty-message">هیچ رستورانی وجود ندارد!</p>
     {% endfor %}
 </div>
-<a href="{% url 'add_restaurant' %}" class="btn">
-      افزودن رستوران
-</a>
+<a href="{% url 'add_restaurant' %}" class="add-link"><i class="bi bi-plus-circle"></i> افزودن رستوران</a>
 </div>
 <div class="img-box">
  <img src= "{% static 'Laychef.jpg' %}" class="img">

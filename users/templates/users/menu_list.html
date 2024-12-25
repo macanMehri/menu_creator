@@ -2,10 +2,11 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/menu_list.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <section class="search-section">
     <form method="get" action="{% url 'menu_list' restaurant_id=restaurant.id %}" class="search-form">
         <input type="text" name="query" placeholder="جست و جو برای غذا..." value="{{ request.GET.query }}" class="search-input">
-        <button type="submit" class="search-button">جست و جو</button>
+        <button type="submit" class="search-button"><i class="bi bi-search"></i></button>
     </form>
 </section>
 <div class="restaurant-info">
@@ -27,8 +28,8 @@
             {% endif %}
             {% if restaurant.owner == request.user %}
                 <div class="actions">
-                    <a href="{% url 'edit_menu_item' menu_item_id=item.id %}" class="edit-link">تغییر</a>
-                    <a href="{% url 'delete_menu_item' menu_item_id=item.id %}" class="delete-link">حذف</a>
+                    <a href="{% url 'edit_menu_item' menu_item_id=item.id %}" class="update-link"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{% url 'delete_menu_item' menu_item_id=item.id %}" class="delete-link"><i class="bi bi-trash3-fill"></i></a>
                 </div>
             {% endif %}
         </li>
@@ -42,12 +43,10 @@
             <ul class="reviews-list">
                 {% for review in reviews %}
                     <li>
-                        {% if user == restaurant.owner %}
-                            <strong>{{ review.user }}:</strong><br>
-                        {% endif %}
+                        <strong><i class="bi bi-person-fill"></i> {{ review.user }}:</strong><br>
                         {{ review.rate }}★ - {{ review.description }}
                         {% if user == restaurant.owner %}
-                            <a href="{% url 'confirm_review_delete' review_id=review.id %}" class="delete-review-link">حذف</a>
+                            <a href="{% url 'confirm_review_delete' review_id=review.id %}" class="delete-review-link"><i class="bi bi-trash3-fill"></i></a>
                         {% endif %}
                     </li>
                 {% endfor %}
@@ -58,15 +57,14 @@
 </div>
 
 {% if restaurant.owner == request.user %}
-    <a href="{% url 'add_order_to_menu' restaurant_id=restaurant.id %}" class="add-link">اضافه کردن</a>
-    <a href="{% url 'confirm_restaurant_delete' restaurant_id=restaurant.id %}" class="add-link">حذف رستوران</a>
-    <a href="{% url 'edit_restaurant' restaurant_id=restaurant.id %}" class="add-link">تغییر اطلاعات رستوران</a>
+    <a href="{% url 'add_order_to_menu' restaurant_id=restaurant.id %}" class="add-link">اضافه کردن <i class="bi bi-plus-circle"></i></a>
+    <a href="{% url 'edit_restaurant' restaurant_id=restaurant.id %}" class="update-link">تغییر اطلاعات رستوران <i class="bi bi-pencil-square"></i></a>
+    <a href="{% url 'confirm_restaurant_delete' restaurant_id=restaurant.id %}" class="delete-link">حذف رستوران <i class="bi bi-trash3-fill"></i></a>
 {% endif %}
 
 {% if user.is_authenticated and user != restaurant.owner %}
-        <a href="{% url 'add_review' restaurant_id=restaurant.id %}" class="add-link">نظرسنجی</a>
+        <a href="{% url 'add_review' restaurant_id=restaurant.id %}" class="update-link">نظرسنجی <i class="bi bi-chat"></i></a>
 {% endif %}
-<a href="{% url 'restaurants' %}" class="back-button">بازگشت به لیست رستوران‌ها</a>
 
 <!-- JavaScript to format prices with commas -->
 <script>
