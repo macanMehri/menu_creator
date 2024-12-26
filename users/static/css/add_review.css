@@ -66,11 +66,11 @@ h2 {
 
 .star-rating label:hover,
 .star-rating label:hover ~ label {
-    color: #ffc107;
+    color: #ffa007;
 }
 
 .star-rating input:checked ~ label {
-    color: #ffc107;
+    color: #ffa007;
 }
 
 .form-buttons {
@@ -90,22 +90,26 @@ h2 {
 }
 
 .btn-submit {
-    background-color: #28a745;
+    background-color: #1a731a;
     color: white;
+    border-radius: 35px;
+    width: 100px;
 }
 
 .btn-submit:hover {
-    background-color: #218838;
+    background-color: #134f21;
 }
 
 .btn-cancel {
-    background-color: #dc3545;
+    background-color: #ba3127;
     color: white;
     text-decoration: none;
+    border-radius: 35px;
+    width: 75px;
 }
 
 .btn-cancel:hover {
-    background-color: #c82333;
+    background-color: #a62a21;
 }
 
 .error-messages ul {

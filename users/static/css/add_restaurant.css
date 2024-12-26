@@ -27,21 +27,21 @@ background: white;}
   }
 
     /* Button Styling */
-    .submit-btn {
-        width: 100%;
-        padding: 12px;
-        background-color: #004c56;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Blue color */
+            color: #fff;
+            border: none;
+            border-radius: 35px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
 
-    .submit-btn:hover {
-        background-color: #013b42;
-    }
+        .submit-btn:hover {
+            background-color: #0056b3; /* Darker blue for hover */
+        }
 
     /* Error Styling */
     .form-errors {

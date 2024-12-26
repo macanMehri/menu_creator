@@ -10,10 +10,10 @@
     </form>
 </section>
 <div class="restaurant-info">
-    <span class="restaurant-info-item">امتیاز: {{ restaurant.امتیاز_رستوران }}</span>
-    <span class="restaurant-info-item">شماره تماس: {{ restaurant.phone_number }}</span>
-    <span class="restaurant-info-item">آدرس: {{ restaurant.address }}</span>
-    <span class="restaurant-info-item">رستوران: {{ restaurant.name }}</span>
+    <span class="restaurant-info-item"><i class="bi bi-star-fill"></i> امتیاز: {{ restaurant.امتیاز_رستوران|floatformat:2 }}</span>
+    <span class="restaurant-info-item"><i class="bi bi-telephone-fill"></i> شماره تماس: {{ restaurant.phone_number }}</span>
+    <span class="restaurant-info-item"><i class="bi bi-geo-alt-fill"></i> آدرس: {{ restaurant.address }}</span>
+    <span class="restaurant-info-item"><i class="bi bi-building-fill"></i> رستوران: {{ restaurant.name }}</span>
 </div>
 <div class="menu-container">
 <ul class="menu-list">

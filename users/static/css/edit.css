@@ -7,14 +7,19 @@
         }
 
         .order-form-container {
-            width: 400px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
+            align: center;
+            max-width: 400px;
+            margin: 10px;
+            padding: 10px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
             direction: rtl;
-            text-align: right;
+            border-radius: 10px;
+
+        }
+
+        .order-form-container textarea {
+            resize: none;
         }
 
         .form-group {
@@ -30,28 +35,11 @@
         .form-group input,
         .form-group select,
         .form-group textarea {
-            width: 100%;
+            width: 380px;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 14px;
-        }
-
-        .custom-file-label {
-            display: inline-block;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            color: #555;
-            background: #f8f9fa;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .custom-file-label:hover {
-            background: #e2e6ea;
         }
 
         .submit-button {
@@ -60,7 +48,7 @@
             background-color: #007bff; /* Blue color */
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 35px;
             font-size: 16px;
             cursor: pointer;
             text-align: center;
@@ -96,3 +84,20 @@
             margin-bottom: 15px;
             text-align: center;
         }
+.img {
+    position: absolute;
+    right: 690px;
+    max-width: 300px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 0px; /* Corrected from 'margin_left' */
+    top: 160px; /* Corrected '=' to ':' */
+}
+
+.img-box {
+    position: absolute; /* Added 'position' property for better layout control */
+    top: 30px; /* Corrected '=' to ':' */
+    float: left; /* Retained 'float' if required, though not commonly used with 'position' */
+    max-width: 200px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-left: 700px; /* Corrected from 'margin_left' */
+}

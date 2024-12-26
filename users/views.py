@@ -59,10 +59,10 @@ def menu_list(request, restaurant_id):
     if query:
         menu_items = RestaurantMenu.objects.filter(
             Q(order__name__icontains=query) | Q(order__category__title__icontains=query, is_active=True)
-        )
+        ).order_by('order__category__title')
     else:
-        menu_items = RestaurantMenu.objects.filter(restaurant=restaurant, )
-    reviews = Review.objects.filter(is_active=True, restaurant=restaurant)
+        menu_items = RestaurantMenu.objects.filter(restaurant=restaurant, ).order_by('order__category__title')
+    reviews = Review.objects.filter(is_active=True, restaurant=restaurant).order_by('-created_date')
 
     return render(request, 'users/menu_list.html', {
         'menu_items': menu_items,

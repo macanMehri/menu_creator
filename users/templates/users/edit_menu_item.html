@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <body>
     <h2>تغییر اطلاعات سفارش</h2>
@@ -53,8 +54,8 @@
         {% endif %}
 
         <div class="form-group">
-            <label for="id_picture" class="custom-file-label">انتخاب تصویر جدید</label>
-            {{ form.picture }}
+            <label for="id_picture" ><i class="bi bi-floppy2-fill"></i> انتخاب تصویر جدید:</label>
+            <input type="file" name="{{ form.picture.name }}"/>
             {% if form.picture.errors %}
             <div class="field-error">
                 {{ form.picture.errors }}
@@ -62,7 +63,10 @@
             {% endif %}
         </div>
 
-        <button type="submit" class="submit-button">ذخیره تغییرات</button>
+        <button type="submit" class="submit-button">ذخیره تغییرات <i class="bi bi-pencil-square"></i></button>
     </form>
+<div class="img-box">
+    <img src= "{% static 'lovechef.jpg' %}" class="img">
+</div>
 </body>
 {% endblock %}
