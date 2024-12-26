@@ -22,7 +22,7 @@
             <span class="item-name">{{ item.order.name }}</span>
             <span class="item-cost" data-cost="{{ item.order.cost }}">{{ item.order.cost }} ریال</span>
             {% if item.order.picture %}
-                <img src="{{ item.order.picture.url }}" alt="{{ item.order.name }}" style="width: 100px; height: auto;">
+                <img src="{{ item.order.picture.url }}" alt="{{ item.order.name }}" style="width: 200px; height: 120px;">
             {% else %}
                 <img src="{% static 'menu_images/default_image.jpg' %}" alt="Default Image" style="width: 100px; height: auto;">
             {% endif %}
