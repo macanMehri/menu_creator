@@ -1,3 +1,12 @@
+body {
+    background-image: url("/static/bg2.jpg");
+    background-size: 55%; /* Ensures the background covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Makes the background stay fixed during scrolling */
+    background-position: center; /* Centers the image */
+}
+
+
 .form-container a {
   text-align: center;
   color: #020e96;

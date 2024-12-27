@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/add_restaurant.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <h2 class="form-title">افزودن رستوران</h2>
 
 <form method="post" class="restaurant-form" enctype="multipart/form-data">
@@ -24,7 +25,7 @@
     {{ form.as_p }}
 
     <!-- Submit Button -->
-    <button type="submit" class="submit-btn">افزودن رستوران</button>
+    <button type="submit" class="submit-btn">افزودن رستوران <i class="bi bi-plus-circle"></i></button>
 </form>
 <div class="left-restaurant-box">
  <img src= "{% static 'left-chef.jpg' %}" class="left-restaurant">

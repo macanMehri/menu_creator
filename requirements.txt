@@ -1,6 +1,8 @@
 asgiref==3.8.1
 Django==4.2
+django-admin-persian-fonts==0.2
 pillow==11.0.0
 psycopg2==2.9.10
+six==1.17.0
 sqlparse==0.5.1
 tzdata==2024.2
