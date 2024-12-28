@@ -247,3 +247,7 @@ def delete_review(request, review_id):
 def user_dash_view(request):
     restaurants = Restaurant.objects.filter(owner=request.user,)
     return render(request, 'users/dashboard.html', {'restaurants': restaurants})
+
+
+def about_us(request):
+    return render(request, 'users/about_us_2.html')

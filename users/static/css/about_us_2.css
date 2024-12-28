@@ -1,0 +1,53 @@
+.members {
+    display: flex;
+    flex-direction: row; /* چیدمان افقی */
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* فاصله بیشتر بین کادرها */
+    margin-top: 50px;
+}
+
+.member-item {
+    width: 400px; /* عرض کادر */
+    text-align: right; /* راست‌چین کردن محتویات */
+}
+
+.member-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* قرار دادن تصویر و متن به صورت عمودی */
+    align-items: flex-end;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid #D67A1B;
+    padding: 30px; /* کاهش فضای داخلی کادر به 30px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 450px; /* ارتفاع ثابت کادر */
+    box-sizing: border-box; /* باعث می‌شود که padding در اندازه کلی کادر لحاظ شود */
+}
+
+.membeer-pic {
+    width: 180px; /* اندازه تصویر */
+    height: 180px; /* ارتفاع تصویر */
+    border-radius: 50%;
+    border: 5px solid #F0932B;
+    object-fit: cover;
+    margin-bottom: 20px; /* فاصله بین تصویر و متن */
+}
+
+.member-name {
+    font-size: 20px; /* اندازه نام */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px; /* فاصله بین نام و بیوگرافی */
+}
+
+.member-bio {
+    font-size: 16px; /* اندازه بیوگرافی */
+    color: #666;
+    text-align: right;
+}
+
+.membeer-pic:hover {
+    transform: scale(1.1); /* بزرگ شدن تصویر هنگام هاور */
+}

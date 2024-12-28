@@ -83,6 +83,7 @@
 /* Restaurant Info Section */
 .restaurant-info {
     display: flex;
+    height: 70px;
     width: 100%;
     flex-direction: row;
     align-items: center;
