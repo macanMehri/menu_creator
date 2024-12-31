@@ -1,0 +1,115 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+<body>
+    <header>
+        <div>
+            <h1><a href="{% url 'landing_page' %}" >منو باما</a></h1>
+        </div>
+        <nav>
+            <a href="{% url 'landing_page' %}">خانه</a>
+            <a href="{% url 'restaurants' %}">رستوران ها</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}" >حساب کاربری</a>
+            {% endif %}
+
+            <a href="{% url 'about_us' %}">درباره ی ما</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">خروج</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="login-button">ورود</a>
+                <a href="{% url 'signup' %}" class="signup-button">ثبت نام</a>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="main">
+    <div class="topic">
+        <div class="name">
+            <h1>سامانه منو باما</h1>
+        </div>
+
+    </div>
+    <div class="section1">
+        <div class="rise">
+            <img src="{% static 'rise.png' %}" alt="rise">
+        </div>
+        <div class="text">
+            <h1>یک رشد فضایی برای مجموعه‌های غذایی</h1>
+            <p>یک سایت رستورانی خوب، باید با نیازها و انتظارهای مشتریان و صاحبان رستوران مطابقت داشته باشدما به‌واسطه تجربه و دانشی که حاصل سال‌ها فعالیت در این حوزه است، به بهترین و بهینه‌ترین سازوکار برای طراحی منو رستوران رسیده‌ایم که می‌تواند شما را برای رسیدن به اهدافتان کمک کند..</p>
+
+        </div>
+    </div>
+    <div class="section2">
+        <div class="online">
+            <img src="{% static 'online.png' %}" alt="online">
+        </div>
+        <div class="text">
+            <h1>منو باما چیست؟</h1>
+            <p>به زبان ساده، سایت رستوران شما یا به عبارت بهتر همان شعبه آنلاین مجموعه غذایی شما است. به دلیل تغییر رفتار خرید مردم و تمایل بیشتر آن‌ها به مشاهده آنلاین، ضرورت طراحی سایت برای رستوران ها به امری مهم تبدیل شده است. منو باما هر آنچه برای راه اندازی سایت منوی آنلاین غذا لازم داشته باشید را در اختیارتان قرار می‌دهد.</p>
+        </div>
+
+    </div>
+
+    <div id="frame">
+        <input type="radio" name="frame" id="frame1" checked />
+        <input type="radio" name="frame" id="frame2" />
+        <input type="radio" name="frame" id="frame3" />
+        <input type="radio" name="frame" id="frame4" />
+        <div id="slides">
+            <div id="overflow">
+                <div class="inner">
+                    <div class="frame frame_1">
+
+                        <div class="frame-content">
+                            <h2>منو خود را به صورت رایگان ایجاد کنید</h2>
+                            <p>با استفاده از پلتفرم ما، می‌توانید منوی رستوران خود را به راحتی و کاملاً رایگان بسازید و آن را برای مشتریان خود به نمایش بگذارید. این امکان را به شما می‌دهیم تا منویی جذاب و حرفه‌ای را بدون هیچ هزینه‌ای ایجاد کنید</p>
+                            <img src="{% static 'free.png' %}">
+                        </div>
+                    </div>
+                    <div class="frame frame_2">
+                        <div class="frame-content">
+                            <h2>در محیطی بسیار راحت و قابل فهم</h2>
+                            <p>با رابط کاربری ساده و قابل فهم، به راحتی می‌توانید رستوران خود را مدیریت کنید. هیچ پیچیدگی و سردرگمی در کار نخواهد بود، فقط یک تجربه کاربری روان و لذت‌بخش.</p>
+                            <img src="{% static 'ui.png' %}">
+                        </div>
+                    </div>
+                    <div class="frame frame_3">
+                        <div class="frame-content">
+                            <h2> یک لیست مرتب از رستوران‌های خود مشاهده کنید و شعب خود را به راحتی مدیریت کنید</h2>
+                            <p>
+                                لیستی منظم از رستوران‌ها و شعبه‌های خود داشته باشید و مدیریت همه شعبات را در یک مکان متمرکز انجام دهید. این ویژگی باعث صرفه‌جویی در زمان و ساده‌تر شدن فرآیندهای مدیریتی شما خواهد شد.
+                                </p>
+                                <img src="{% static 'note.png' %}">
+                        </div>
+                    </div>
+                    <div class="frame frame_4">
+                        <div class="frame-content">
+                            <h2>نظرات کاربران را بررسی کنید و امتیاز رستوران خود را ببینید</h2>
+                            <p>با دریافت نظرات و امتیازات مشتریان، می‌توانید کیفیت خدمات خود را بسنجید و بهبود بخشید. این بخش به شما کمک می‌کند تا رضایت مشتریان خود را حفظ کنید و تجربه‌ای بهتر ارائه دهید.
+                            </p>
+                            <img src="{% static 'comment.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="controls">
+            <label for="frame1"></label>
+            <label for="frame2"></label>
+            <label for="frame3"></label>
+            <label for="frame4"></label>
+        </div>
+        <div id="bullets">
+            <label for="frame1"></label>
+            <label for="frame2"></label>
+            <label for="frame3"></label>
+            <label for="frame4"></label>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy;  تمام حقوق این سایت متعلق به گروه مهندسی امن می باشد </p>
+        <p><a href="mailto:">amn@gmail.com : ارتباط با ما</a></p>
+    </footer>
+</body>

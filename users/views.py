@@ -7,6 +7,9 @@ from django.contrib import messages
 from django.db.models import Q
 
 
+def index(request):
+    return render(request, 'landing_page.html')
+
 def restaurants_view(request):
     # Retrieve all active restaurants
     query = request.GET.get('query', '')
