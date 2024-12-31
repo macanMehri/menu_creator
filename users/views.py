@@ -56,6 +56,8 @@ def login_view(request):
 def menu_list(request, restaurant_id):
     query = request.GET.get('query', '')
     restaurant = get_object_or_404(Restaurant, id=restaurant_id,)
+    if not restaurant.is_active and request.user != restaurant.owner:
+        return redirect('restaurants')
     if query:
         menu_items = RestaurantMenu.objects.filter(
             Q(order__name__icontains=query) | Q(order__category__title__icontains=query, is_active=True)
@@ -136,8 +138,10 @@ def add_order_to_menu(request, restaurant_id):
         form = OrderForm(request.POST, request.FILES)
         if form.is_valid():
             order = form.save(commit=False)
+            order.is_active = True
             order.save()
             restaurant_menu = RestaurantMenu(order=order, restaurant=restaurant)
+            restaurant_menu.is_active = True
             restaurant_menu.save()
             return redirect('menu_list', restaurant.id)  # Replace with your desired redirect URL
     else:
@@ -155,7 +159,7 @@ def add_restaurant(request):
             restaurant = form.save(commit=False)
             restaurant.owner = request.user  # Set the current logged-in user as the owner
             restaurant.save()  # Save the restaurant to the database
-            return redirect('restaurants')  # Redirect to a page showing the list of restaurants
+            return redirect('dashboard')  # Redirect to a page showing the list of restaurants
     else:
         form = RestaurantForm()
 

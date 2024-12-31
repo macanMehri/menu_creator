@@ -5,6 +5,7 @@
         color: #e74c3c;
         margin-bottom: 20px;
         font-family: 'Arial', sans-serif;
+        background-image: url("{% static 'delete.png' %}");
     }
 
     /* Confirmation Text */
@@ -12,7 +13,7 @@
         text-align: center;
         font-size: 18px;
         color: #333;
-        margin-bottom: 20px;
+        margin-bottom: 65px;
         line-height: 1.6;
         font-family: 'Arial', sans-serif;
     }
@@ -63,3 +64,18 @@
         font-family: 'Arial', sans-serif;
         background-color: #f9f9f9;
     }
+.img {
+    position: fixed;
+    right: 10px;
+    max-width: 35px;
+    border-radius: 0px;
+    margin-right: 48.3%;
+    top: 200px; /* Corrected '=' to ':' */
+}
+
+.img-box {
+    position: fixed;
+    max-width: 200px;
+    border-radius: 0px; /* Corrected from 'border_radius' */
+    margin-right: auto;
+}

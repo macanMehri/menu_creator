@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="{% static 'css/confirm_delete.css' %}">
 <h1>حذف رستوران</h1>
 <p class="confirmation-text">آیا مطمئن هستید که می خواهید {{ restaurant.name }} را حذف کنید؟</p>
-
+<div class="img-box">
+    <img src= "{% static 'delete.png' %}" class="img">
+</div>
 <form method="post" class="delete-form">
     {% csrf_token %}
     <button type="submit" class="confirm-button">بله</button>

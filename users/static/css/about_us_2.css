@@ -5,6 +5,7 @@
     align-items: center;
     gap: 30px; /* فاصله بیشتر بین کادرها */
     margin-top: 50px;
+    margin-bottom: 40px;
 }
 
 .member-item {
@@ -43,9 +44,11 @@
 }
 
 .member-bio {
+    direction: rtl;
     font-size: 16px; /* اندازه بیوگرافی */
     color: #666;
-    text-align: right;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .membeer-pic:hover {

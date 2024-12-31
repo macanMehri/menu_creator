@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="{% static 'css/confirm_delete.css' %}">
 <h1>حذف سفارش از منو</h1>
 <p class="confirmation-text">آیا مطمئن هستید که می خواهید {{ menu_item.order.name }} را حذف کنید؟</p>
+<div class="img-box">
+    <img src= "{% static 'delete.png' %}" class="img">
+</div>
 
 <form method="post" class="delete-form">
     {% csrf_token %}
